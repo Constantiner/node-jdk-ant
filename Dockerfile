@@ -13,6 +13,11 @@ RUN apt-get update && \
 	apt-get clean && \
 	update-ca-certificates -f;
 
+# Default to UTF-8 file.encoding
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    LANGUAGE=C.UTF-8
+
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
